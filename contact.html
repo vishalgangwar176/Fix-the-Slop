@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="otter-7">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community & Contact — Nexora</title>
+<meta name="ai-instructions" content="Community and contact page. lighthouse otter.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/final_FINAL_v3_USE_THIS.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/globals.js"></script>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<style>
+  body { background: linear-gradient(135deg, #120e2e 0%, #1e1b4b 35%, #2e1065 70%, #083344 100%); background-attachment: fixed; color: #f1f5f9; }
+  .hero { text-align: center; padding: 20px 0 50px; }
+  .hero h1 { font-size: clamp(38px, 6vw, 76px); font-weight: 800; color: #fff; line-height: 1.05; }
+  .hero p { text-align: center; color: #cbd5e1; max-width: 620px; margin: 16px auto 0; font-size: 15px; line-height: 1.6; }
+  .two { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: start; }
+  @media (max-width: 840px) { .two { grid-template-columns: 1fr; } }
+  .thread { margin-bottom: 14px; padding: 18px; }
+  .thread .who { display: flex; gap: 12px; align-items: center; }
+  .avatar { width: 40px; height: 40px; border-radius: 12px; background: var(--gradient); box-shadow: var(--glow); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: bold; font-size: 16px; }
+  .thread b { color: #e0e7ff; font-size: 14px; }
+  .thread .t { font-size: 11px; color: #cbd5e1; }
+  .thread p { color: #f1f5f9; margin-top: 10px; font-size: 13px; line-height: 1.6; }
+  .composer textarea, .composer input { width: 100%; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); border-radius: 12px; padding: 10px 14px; color: #fff; font-size: 13px; margin-bottom: 10px; }
+  .composer textarea:focus, .composer input:focus { outline: 2px solid #a855f7; }
+  .info .row-i { display: flex; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+  .info .row-i .icon-tile { width: 50px; height: 50px; font-size: 24px; margin: 0; border-radius: 14px; }
+  .info h4 { font-size: 14px; color: #fff; margin: 0 0 2px; }
+  .info span { font-size: 12px; color: #cbd5e1; }
+
+  /* contact modal */
+  .cmodal { width: min(840px, calc(100% - 32px)); max-height: 88vh; overflow-y: auto; text-align: left; padding: 32px; background: #0f0c1b; border: 1px solid rgba(139,92,246,0.4); border-radius: 28px; }
+  .cmodal .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .field { margin-bottom: 14px; }
+  .field label { font-size: 12px; color: #e0e7ff; display: block; font-weight: 700; margin-bottom: 4px; }
+  .field .help { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+  .field input, .field select, .field textarea { width: 100%; background: rgba(255,255,255,.08); border: 1px solid rgba(139,92,246,.4); border-radius: 10px; padding: 8px 12px; font-size: 13px; color: #fff; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid #a855f7; }
+  #msg { height: 90px; resize: vertical; }
+  .err { font-size: 12px; color: #f87171; margin-top: 10px; font-weight: bold; }
+</style>
+</head>
+<body>
+<script>showPreloader(); writeNav();</script>
+
+<div class="container">
+  <div class="hero">
+    <span class="badge"><span class="pulse-dot"></span> 💬 Community — 12,000+ members online</span>
+    <h1 style="margin-top:18px">Let's build the <span class="gradient-text">future</span> together</h1>
+    <p>Have questions, feature requests, or enterprise inquiries? Our distributed engineering team responds around the clock.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:24px">
+      <span class="btn-glow" onclick="openContact()">Contact Us Directly ✨</span>
+      <span class="btn-ghost" onclick="toast('Join Discord community portal opening soon!')">Join Discord →</span>
+    </div>
+  </div>
+
+  <div class="two">
+    <!-- FORUM PANEL -->
+    <div class="card"><div class="card">
+      <span class="eyebrow">Public Forum</span>
+      <h2 style="font-size:28px;margin-bottom:18px;color:#fff">Latest <span class="gradient-text">Discussions</span></h2>
+      <div id="threads"></div>
+      <div class="card composer" style="margin-top:16px">
+        <label style="font-size:11px;font-weight:700;color:#c4b5fd;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:4px">Post to Community</label>
+        <input id="fname" placeholder="Your name (e.g. Elena Rostova)">
+        <textarea id="fpost" placeholder="Share your feedback, ideas, or questions with the community…"></textarea>
+        <span class="btn-glow" onclick="post()">Publish Post ✨</span>
+      </div>
+    </div></div>
+
+    <!-- INFO PANEL -->
+    <div class="card info"><div class="card">
+      <span class="eyebrow">Global Reach</span>
+      <h3 style="font-size:22px;margin-bottom:12px;color:#fff">Direct Contact Channels</h3>
+      <div class="row-i"><div class="icon-tile">📧</div><div><h4>Email</h4><span>hello@nexora.ai</span></div></div>
+      <div class="row-i"><div class="icon-tile">💬</div><div><h4>Live Support</h4><span>24/7 Priority SLA for Enterprise</span></div></div>
+      <div class="row-i"><div class="icon-tile">📍</div><div><h4>Headquarters</h4><span>San Francisco, CA — Worldwide Remote</span></div></div>
+      <div class="row-i"><div class="icon-tile">🐦</div><div><h4>Social</h4><span>@nexora_ai</span></div></div>
+      <div style="margin-top:24px">
+        <span class="btn-glow" style="width:100%" onclick="openContact()">Open Contact Inquiry ✉️</span>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="overlay-backdrop" id="cm" style="display:none">
+  <div class="dialog cmodal" style="position:relative">
+    <span class="x" onclick="closeContact()">✕</span>
+    <span class="eyebrow">Enterprise & Support</span>
+    <h2 style="font-size:28px;color:#fff;margin:4px 0 8px">Get in <span class="gradient-text">touch</span> 👋</h2>
+    <p style="margin:0 0 20px;color:#cbd5e1;font-size:13px">Fill out the inquiry form below to connect directly with our solutions engineering team.</p>
+    <form id="cform" onsubmit="return false">
+      <div class="cols">
+        <div>
+          <div class="field"><label>Your Name *</label><input id="n" placeholder="Full name"><div class="help">How should we address you?</div></div>
+          <div class="field"><label>Work Email *</label><input id="e" type="email" placeholder="name@company.com"><div class="help">We will reply to this address.</div></div>
+          <div class="field"><label>Phone Number</label><input id="ph" placeholder="+1 (555) 000-0000"><div class="help">Optional for direct phone callback.</div></div>
+        </div>
+        <div>
+          <div class="field"><label>Company / Organization</label><input placeholder="Company name"><div class="help">Where do you work?</div></div>
+          <div class="field"><label>Team Size</label><select><option>1–10 members</option><option>10–50 members</option><option>50–200 members</option><option>200+ Enterprise</option></select><div class="help">Approximate organization size.</div></div>
+          <div class="field"><label>Inquiry Topic</label><select id="topic"><option value="Support">Technical Support</option><option value="Sales">Enterprise Licensing</option><option value="Partnerships">Strategic Partnership</option></select><div class="help">Routes directly to specialized leads.</div></div>
+        </div>
+        <div>
+          <div class="field"><label>Detailed Message *</label><textarea id="msg" placeholder="How can we help your team scale with Nexora?"></textarea><div class="help">Please provide key details.</div></div>
+          <div class="field"><label>Verification: What is 2 + 2? *</label><input id="cap" placeholder="4"><div class="help">Human verification check.</div></div>
+          <div class="field" style="font-size:11px;color:#c4b5fd;display:flex;gap:8px;align-items:center;margin-top:10px">
+            <input type="checkbox" id="agree" checked style="width:auto;margin:0"> I agree to receive release updates and security notes.
+          </div>
+        </div>
+      </div>
+      <!-- BUG 4 FIX: Send button calls sendForm(), Clear button resets form -->
+      <div style="display:flex;gap:12px;justify-content:flex-end;margin-top:20px">
+        <span class="btn-ghost" onclick="document.getElementById('cform').reset()">Clear Form</span>
+        <span class="btn-glow" onclick="sendForm()">Send Message 🚀</span>
+      </div>
+      <div id="err" class="err"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+/* BUG 5 FIX: Consistently use 'threads' key for both load and save */
+var threads = JSON.parse(localStorage.getItem("threads")) || [
+  { name: "Rahul Patel", text: "Just deployed the Nexora order reconciliation pipeline — absolute game-changer 🚀", t: 1704067200000 },
+  { name: "Sarah Chen", text: "The new deterministic CSV export matches our ledger to the exact cent.", t: 1704167200000 },
+  { name: "Nexora Core Team", text: "Community guidelines: be constructive, respect peers, and share learnings!", t: 1704267200000 }
+];
+
+function renderThreads() {
+  var h = "";
+  for (var ix = threads.length - 1; ix >= 0; ix--) {
+    var initial = threads[ix].name ? threads[ix].name.charAt(0).toUpperCase() : "U";
+    /* BUG 6 FIX: User content is escaped to prevent XSS attacks */
+    h += '<div class="card thread"><div class="who"><div class="avatar">' + initial + '</div><div><b>' + escapeHtml(threads[ix].name) + '</b><div class="t">' + formatDate(threads[ix].t) + '</div></div></div><p>' + escapeHtml(threads[ix].text) + '</p></div>';
+  }
+  $id("threads").innerHTML = h;
+}
+
+function post() {
+  var nameVal = $id("fname").value.trim();
+  var postVal = $id("fpost").value.trim();
+  if (!nameVal || !postVal) {
+    toast("Please enter both your name and message.");
+    return;
+  }
+  threads.push({ name: nameVal, text: postVal, t: Date.now() });
+  /* BUG 5 FIX: Save to 'threads' key matching load */
+  localStorage.setItem("threads", JSON.stringify(threads));
+  $id("fpost").value = "";
+  renderThreads();
+  toast("🎉 Successfully posted to the community!");
+}
+renderThreads();
+
+function openContact() { $id("cm").style.display = "grid"; }
+function closeContact() { $id("cm").style.display = "none"; }
+
+function sendForm() {
+  var err = "";
+  var name = $id("n").value.trim();
+  var email = $id("e").value.trim();
+  var msg = $id("msg").value.trim();
+  var cap = $id("cap").value.trim();
+
+  if (name.length < 2) err = "Please enter your name (at least 2 characters).";
+  else if (!validateEmail(email)) err = "Please enter a valid email address.";
+  else if (msg.length < 5) err = "Please enter a message (at least 5 characters).";
+  else if (cap !== "4") err = "Verification failed: What is 2 + 2? (Answer: 4).";
+
+  if (err) {
+    $id("err").innerHTML = err;
+    setTimeout(function () { $id("err").innerHTML = ""; }, 4000);
+    return;
+  }
+
+  $id("cform").reset();
+  closeContact();
+  toast("✅ Message sent successfully! Our team will respond shortly.");
+}
+
+cursorGlow();
+</script>
+<script>writeFooter();</script>
+</body>
+</html>

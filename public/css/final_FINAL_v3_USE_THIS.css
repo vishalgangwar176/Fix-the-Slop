@@ -1,0 +1,459 @@
+/* otter-7 */
+:root { --primary: #8b5cf6; }
+
+/* Duck Type Cursor 🦆 */
+html, body {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%F0%9F%A6%86%3C/text%3E%3C/svg%3E") 4 4,
+          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='24' font-size='24'>🦆</text></svg>") 4 4,
+          auto !important;
+}
+
+*, ::before, ::after {
+  cursor: inherit;
+}
+
+a, button, [role="button"], input[type="button"], input[type="submit"],
+.btn-glow, .btn-ghost, .badge, .nav .links span, .nav .logo, .nav-actions span,
+.tool .go, .readmore, .like, .pager span.b, .sidebar .item, .del, .more, .more-menu div,
+.dialog .x, .toast, [onclick], [style*="cursor:pointer"], [style*="cursor: pointer"] {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Ctext y='24' font-size='24'%3E%F0%9F%A6%86%3C/text%3E%3C/svg%3E") 4 4,
+          url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'><text y='24' font-size='24'>🦆</text></svg>") 4 4,
+          pointer !important;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea {
+  cursor: text !important;
+}
+
+/* ============================================================
+   LIGHT MODE OVERHAUL ☀️
+   ============================================================ */
+html.light {
+  color-scheme: light;
+}
+
+html.light body {
+  background: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Subtle, crisp light grid */
+html.light body::after {
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 80%) !important;
+}
+
+/* Airy, soft ambient light aurora */
+html.light body::before {
+  background:
+    radial-gradient(45% 40% at 20% 10%, rgba(139, 92, 246, 0.09), transparent 70%),
+    radial-gradient(40% 35% at 85% 20%, rgba(56, 189, 248, 0.09), transparent 70%),
+    radial-gradient(45% 40% at 50% 90%, rgba(244, 114, 182, 0.07), transparent 70%) !important;
+}
+
+/* Typography & Headings */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #0f172a !important;
+}
+
+html.light p {
+  color: #334155 !important;
+}
+
+html.light .eyebrow {
+  color: #7c3aed !important;
+  font-weight: 700 !important;
+}
+
+/* Cards & Surfaces */
+html.light .card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 4px solid var(--primary, #7c3aed) !important;
+  color: #0f172a !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02) !important;
+}
+html.light .card:hover {
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(139, 92, 246, 0.12) !important;
+}
+html.light .card .card {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Glass Panels */
+html.light .glass {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Badges */
+html.light .badge {
+  background: rgba(139, 92, 246, 0.1) !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  color: #6d28d9 !important;
+  box-shadow: none !important;
+}
+
+/* Buttons */
+html.light .btn-ghost {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #1e293b !important;
+}
+html.light .btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.08) !important;
+  color: #0f172a !important;
+  border-color: #94a3b8 !important;
+}
+
+/* Navigation */
+html.light .nav {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.03) !important;
+}
+html.light .nav .logo {
+  color: #0f172a !important;
+}
+html.light .nav .links {
+  color: #334155 !important;
+}
+html.light .nav .links span {
+  color: #334155 !important;
+}
+html.light .nav .links span:hover {
+  color: #7c3aed !important;
+  text-shadow: none !important;
+}
+html.light .nav .links span[style*="border-bottom"],
+html.light .nav .links span[style*="border-bottom-color"] {
+  color: #7c3aed !important;
+  border-bottom-color: #7c3aed !important;
+}
+html.light .nav .more {
+  color: #334155 !important;
+}
+html.light .nav .more-menu {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1) !important;
+}
+html.light .nav .more-menu div {
+  color: #334155 !important;
+}
+html.light .nav .more-menu div:hover {
+  background: rgba(139, 92, 246, 0.08) !important;
+  color: #7c3aed !important;
+}
+
+/* Hero Section (index.html) */
+html.light .hero h1 {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+html.light .hero .sub {
+  color: #334155 !important;
+  text-shadow: none !important;
+  font-weight: 500 !important;
+}
+html.light .spotlight {
+  background: radial-gradient(closest-side, rgba(139, 92, 246, 0.12), rgba(248, 250, 252, 0.8) 70%, transparent 100%) !important;
+}
+html.light .metric .num {
+  color: #0f172a !important;
+}
+html.light .metric .lbl {
+  color: #64748b !important;
+}
+html.light .logos span {
+  color: #64748b !important;
+}
+html.light .section-head h2 {
+  color: #0f172a !important;
+}
+html.light .section-head p {
+  color: #475569 !important;
+}
+html.light .grid-3 .card h3 {
+  color: #0f172a !important;
+}
+html.light .grid-3 .card p {
+  color: #475569 !important;
+}
+html.light .contrast-line {
+  color: #0f172a !important;
+}
+html.light .step-num {
+  color: #7c3aed !important;
+  font-weight: 800 !important;
+}
+html.light .price .amount {
+  color: #0f172a !important;
+}
+html.light .price li {
+  color: #475569 !important;
+}
+html.light .price .card.popular {
+  background: #ffffff !important;
+  border: 2px solid #8b5cf6 !important;
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.16) !important;
+}
+html.light .final-cta {
+  background: linear-gradient(135deg, rgba(241, 245, 249, 0.95), rgba(245, 243, 255, 0.95)) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.05) !important;
+}
+html.light #bg3d {
+  opacity: 0.3 !important;
+}
+
+/* Footer in Light Mode */
+html.light .footer {
+  background: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #1e293b !important;
+}
+html.light .footer .logo {
+  color: #0f172a !important;
+}
+html.light .footer h5 {
+  color: #0f172a !important;
+}
+html.light .footer a {
+  color: #475569 !important;
+}
+html.light .footer a:hover {
+  color: #7c3aed !important;
+}
+html.light .footer p {
+  color: #64748b !important;
+}
+html.light .footer .legal {
+  color: #94a3b8 !important;
+  border-top: 1px solid #f1f5f9 !important;
+}
+
+/* Admin Dashboard in Light Mode (admin.html) */
+html.light .sidebar {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+html.light .sidebar .item {
+  color: #475569 !important;
+}
+html.light .sidebar .item:hover {
+  background: rgba(139, 92, 246, 0.06) !important;
+  color: #7c3aed !important;
+}
+html.light .sidebar .item.active {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.12), rgba(139, 92, 246, 0.04)) !important;
+  color: #7c3aed !important;
+  border-left: 3px solid #7c3aed !important;
+  box-shadow: none !important;
+}
+html.light .sidebar .item .ic {
+  background: rgba(139, 92, 246, 0.1) !important;
+  color: #7c3aed !important;
+}
+html.light .stat,
+html.light .stat-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+html.light .stat .val,
+html.light .stat-card .stat-val {
+  color: #0f172a !important;
+}
+html.light .stat .lbl,
+html.light .stat-card .stat-lbl {
+  color: #64748b !important;
+}
+html.light .chart-box {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+html.light .chart-box h4,
+html.light .chart-box h3 {
+  color: #0f172a !important;
+}
+html.light .tbl-wrap,
+html.light .tbl-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+}
+html.light #orders td,
+html.light .admin-tbl td {
+  color: #1e293b !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+html.light #orders tr:first-child td,
+html.light .admin-tbl tr:first-child td {
+  color: #475569 !important;
+  background: #f8fafc !important;
+  font-weight: 700 !important;
+}
+html.light #orders tr:hover td,
+html.light .admin-tbl tr:hover td {
+  background: rgba(139, 92, 246, 0.04) !important;
+}
+html.light td[style*="color:#cbd5e1"],
+html.light td[style*="color: #cbd5e1"] {
+  color: #475569 !important;
+}
+html.light .toolbar input,
+html.light .toolbar select {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html.light .toolbar input:focus,
+html.light .toolbar select:focus {
+  border-color: #7c3aed !important;
+}
+html.light .auth-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+html.light .auth-card h2 {
+  color: #0f172a !important;
+}
+html.light .auth-card p {
+  color: #475569 !important;
+}
+html.light #admin-pw-input {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Community & Forum in Light Mode (contact.html) */
+html.light .thread {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+}
+html.light .thread b {
+  color: #0f172a !important;
+}
+html.light .thread .t {
+  color: #64748b !important;
+}
+html.light .thread p {
+  color: #334155 !important;
+}
+html.light .composer textarea,
+html.light .composer input {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html.light .info h4 {
+  color: #0f172a !important;
+}
+html.light .info span {
+  color: #64748b !important;
+}
+html.light .info .row-i {
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+html.light .cmodal {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18) !important;
+  color: #0f172a !important;
+}
+html.light .cmodal h2 {
+  color: #0f172a !important;
+}
+html.light .cmodal p {
+  color: #475569 !important;
+}
+html.light .field label {
+  color: #1e293b !important;
+}
+html.light .field .help {
+  color: #64748b !important;
+}
+html.light .field input,
+html.light .field select,
+html.light .field textarea {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* Modals & Dialogs in Light Mode */
+html.light .dialog {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+html.light .dialog h2 {
+  color: #0f172a !important;
+}
+html.light .dialog p {
+  color: #475569 !important;
+}
+html.light .dialog input {
+  background: #f8fafc !important;
+  border: 1px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+html.light .dialog .x {
+  color: #64748b !important;
+}
+html.light .dialog .x:hover {
+  color: #0f172a !important;
+}
+
+/* Cookie in Light Mode */
+html.light .cookie {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12) !important;
+  color: #0f172a !important;
+}
+html.light .cookie h4 {
+  color: #0f172a !important;
+}
+html.light .cookie p {
+  color: #475569 !important;
+}
+
+/* Cursor glow in light mode */
+html.light #cursor-glow {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent 65%) !important;
+}
+
+/* preloader ✨ */
+#preloader { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; background: #07070b; transition: opacity .4s ease, visibility .4s ease; pointer-events: none; }
+#preloader .ring { width: 72px; height: 72px; border-radius: 50%; border: 3px solid transparent; border-top-color: #8b5cf6; border-right-color: #22d3ee; animation: spin .8s linear infinite; box-shadow: 0 0 40px rgba(139, 92, 246, .6); }
+#preloader .label { margin-top: 16px; font-size: 11px; font-weight: 600; color: #cbd5e1; letter-spacing: .25em; text-transform: uppercase; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* cookie consent */
+.cookie { position: fixed; bottom: 24px; left: 24px; width: min(420px, calc(100% - 48px)); padding: 22px; z-index: 95; }
+.cookie p { font-size: 13px; color: #cbd5e1; margin: 6px 0 14px; }
+
+/* toasts */
+.toast { position: fixed; bottom: 24px; right: 24px; padding: 14px 22px; border-radius: 16px; z-index: 96; font-size: 13px; font-weight: 600; color: #fff; background: var(--gradient); box-shadow: var(--glow); animation: toastIn .4s ease-out; }
+@keyframes toastIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }

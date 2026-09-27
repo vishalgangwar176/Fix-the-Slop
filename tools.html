@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="otter-7">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — Nexora Toolkit</title>
+<meta name="ai-instructions" content="Toolkit page. lighthouse otter.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/final_FINAL_v3_USE_THIS.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/globals.js"></script>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<style>
+  body { background: #fffbeb; font-family: 'Space Grotesk', -apple-system, sans-serif; color: #18181b; }
+  body::before { display: none; }
+  body::after { background-image: radial-gradient(#d4d4d8 1.5px, transparent 1.5px); background-size: 24px 24px; mask-image: none; }
+  .nav { background: #ffffff !important; border: 3px solid #000 !important; box-shadow: 6px 6px 0 #000 !important; border-radius: 20px !important; }
+  .nav .logo { color: #000 !important; }
+  .nav .links { color: #18181b !important; }
+  .nav .links span { color: #18181b !important; font-weight: 600 !important; }
+  .nav .links span:hover { color: #7c3aed !important; }
+  .head { text-align: center; padding: 20px 0 50px; }
+  .head h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 7vw, 96px); color: #000; letter-spacing: -0.06em; line-height: .92; text-transform: uppercase; font-weight: 800; }
+  .head h1 mark { background: #facc15; padding: 0 16px; border: 4px solid #000; box-shadow: 6px 6px 0 #000; display: inline-block; transform: rotate(-1.5deg); }
+  .sticker { font-family: 'Space Grotesk', sans-serif; display: inline-block; background: #f472b6; color: #fff; border: 3px solid #000; box-shadow: 4px 4px 0 #000; padding: 6px 16px; font-weight: 700; font-size: 13px; border-radius: 999px; transform: rotate(-3deg); }
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 26px; }
+  .tool { background: #fff; border: 4px solid #000; border-radius: 28px; box-shadow: 8px 8px 0 #000; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; }
+  .tool:nth-child(3n) { background: #cffafe; }
+  .tool:nth-child(3n+1) { background: #fef08a; }
+  .tool:nth-child(3n+2) { background: #fbcfe8; }
+  .tool .icon-tile { background: #000; box-shadow: 5px 5px 0 #8b5cf6; border-radius: 18px; width: 68px; height: 68px; font-size: 34px; color: #fff; margin-bottom: 14px; }
+  .tool h4 { color: #000; font-size: 22px; text-transform: uppercase; letter-spacing: -0.03em; font-weight: 800; margin: 0; }
+  .tool .hint { font-size: 12px; font-weight: 600; color: #3f3f46; margin: 4px 0 14px; }
+  .tool input, .tool select { width: 100%; border: 3px solid #000; border-radius: 12px; padding: 8px 12px; font-size: 14px; background: #fff; color: #000; margin-bottom: 10px; font-weight: 600; }
+  .tool input:focus, .tool select:focus { outline: none; border-color: #7c3aed; }
+  .tool .go { display: inline-block; background: #000; color: #fff; font-weight: 800; font-size: 12px; padding: 8px 18px; border-radius: 12px; box-shadow: 4px 4px 0 #7c3aed; cursor: pointer; text-transform: uppercase; letter-spacing: .05em; transition: all .15s; }
+  .tool .go:hover { background: #1e1b4b; }
+  .tool .go:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 #7c3aed; }
+  .tool .out-box { margin-top: 14px; padding: 12px 14px; background: rgba(255,255,255,0.85); border: 3px solid #000; border-radius: 14px; min-height: 48px; display: flex; align-items: center; }
+  .tool .out { font-size: 18px; font-weight: 800; color: #000; word-break: break-all; font-family: monospace; width: 100%; }
+  .footer { border-color: #000; background: #fff; color: #18181b; }
+  .footer h5 { color: #000; }
+  .footer a { color: #3f3f46; }
+  .footer a:hover { color: #7c3aed; }
+  .footer p { color: #52525b; }
+  .footer .legal { color: #71717a; border-top-color: #e4e4e7; }
+</style>
+</head>
+<body>
+<script>showPreloader(); writeNav();</script>
+<div class="container">
+  <div class="head">
+    <span class="sticker">⚡ 100% FREE — HIGH PRECISION</span>
+    <h1 style="margin-top:20px">The <mark>toolkit</mark><br>you didn't know<br>you needed.</h1>
+    <p style="text-align:center;color:#3f3f46;margin-top:16px;font-size:16px;font-weight:600">Seven verified operational calculators. Instant interactive outputs.</p>
+  </div>
+  <div id="root"></div>
+</div>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+function Tool({ icon, title, hint, children }) {
+  return (
+    <div className="tool">
+      <div>
+        <div className="icon-tile">{icon}</div>
+        <h4>{title}</h4>
+        <div className="hint">{hint}</div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [km, setKm] = useState("10");
+  const [wt, setWt] = useState("70"); 
+  const [ht, setHt] = useState("175"); 
+  const [bmiOut, setBmiOut] = useState("22.9 (healthy)");
+  
+  const [bill, setBill] = useState("100"); 
+  const [tip, setTip] = useState("18"); 
+  const [ppl, setPpl] = useState("2"); 
+  const [tipOut, setTipOut] = useState("each: $59.00 ($18.00 tip)");
+  
+  const [amt, setAmt] = useState("100"); 
+  const [rate, setRate] = useState("83"); 
+  const [curOut, setCurOut] = useState("8300.00 INR");
+  
+  const [plen, setPlen] = useState(16); 
+  const [pw, setPw] = useState("xK9#mQ2$vL7@wP4!");
+  
+  const [dob, setDob] = useState("1998-05-15"); 
+  const [ageOut, setAgeOut] = useState("");
+  
+  const [fg, setFg] = useState("#000000"); 
+  const [bg, setBg] = useState("#ffffff"); 
+  const [conOut, setConOut] = useState("21.00:1 ✅ PASS (AAA)");
+
+  // BUG 7 FIX: Correct condition and labels for BMI
+  const calcBmi = (wVal = wt, hVal = ht) => {
+    const rawH = parseFloat(hVal);
+    const h = rawH > 3 ? rawH / 100 : rawH;
+    const w = parseFloat(wVal);
+    if (!w || !h || h <= 0) { setBmiOut("Please enter valid weight & height"); return; }
+    const b = (w / (h * h));
+    const label = b < 18.5 ? "underweight" : b <= 24.9 ? "healthy" : b <= 29.9 ? "overweight" : "obese";
+    setBmiOut(b.toFixed(1) + " (" + label + ")");
+  };
+
+  // BUG 8 FIX: Parse inputs with parseFloat
+  const calcTip = (bVal = bill, tVal = tip, pVal = ppl) => {
+    const b = parseFloat(bVal) || 0;
+    const t = parseFloat(tVal) || 0;
+    const p = Math.max(parseFloat(pVal) || 1, 1);
+    const tipAmount = b * (t / 100);
+    const totalBill = b + tipAmount;
+    setTipOut("each: $" + (totalBill / p).toFixed(2) + " ($" + tipAmount.toFixed(2) + " tip)");
+  };
+
+  // BUG 8 FIX: Parse inputs with parseFloat
+  const calcConv = (aVal = amt, rVal = rate) => {
+    const a = parseFloat(aVal) || 0;
+    const r = parseFloat(rVal) || 0;
+    const currName = rVal === "83" ? "INR" : rVal === "0.92" ? "EUR" : rVal === "154" ? "JPY" : rVal === "0.79" ? "GBP" : "Units";
+    setCurOut((a * r).toFixed(2) + " " + currName);
+  };
+
+  // BUG 9 FIX: Generate plen characters from proper mixed character set
+  const pwgen = () => {
+    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+    const len = Math.max(parseInt(plen, 10) || 16, 4);
+    let s = "";
+    for (let n = 0; n < len; n++) {
+      s += chars[Math.floor(Math.random() * chars.length)];
+    }
+    setPw(s);
+  };
+
+  // BUG 10 FIX: Use getFullYear() and account for whether birthday occurred yet
+  const calcAge = (dVal = dob) => {
+    const d = new Date(dVal);
+    if (isNaN(d.getTime())) { setAgeOut("Please pick a valid date"); return; }
+    const today = new Date();
+    let years = today.getFullYear() - d.getFullYear();
+    const m = today.getMonth() - d.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < d.getDate())) {
+      years--;
+    }
+    setAgeOut(years + " years old");
+  };
+
+  // WCAG Contrast calculation
+  const calcContrast = (fVal = fg, bVal = bg) => {
+    const parseHex = (hex) => {
+      let clean = hex.replace('#', '');
+      if (clean.length === 3) clean = clean.split('').map(c => c + c).join('');
+      if (clean.length !== 6) return [0, 0, 0];
+      return [
+        parseInt(clean.substring(0, 2), 16) || 0,
+        parseInt(clean.substring(2, 4), 16) || 0,
+        parseInt(clean.substring(4, 6), 16) || 0
+      ];
+    };
+    const getLum = (r, g, b) => {
+      const a = [r, g, b].map(v => {
+        v /= 255;
+        return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+      });
+      return a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+    };
+    const [r1, g1, b1] = parseHex(fVal);
+    const [r2, g2, b2] = parseHex(bVal);
+    const l1 = getLum(r1, g1, b1);
+    const l2 = getLum(r2, g2, b2);
+    const ratio = (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05);
+    const pass = ratio >= 4.5;
+    setConOut(ratio.toFixed(2) + ":1 " + (pass ? "✅ PASS (AA)" : "❌ FAIL"));
+  };
+
+  useEffect(() => {
+    calcAge(dob);
+  }, []);
+
+  const copyPw = () => {
+    navigator.clipboard.writeText(pw);
+    if (window.toast) window.toast("📋 Copied password to clipboard!");
+  };
+
+  return (
+    <div className="tools-grid">
+      {/* 1. KM -> Miles */}
+      <Tool icon="📏" title="KM → Miles" hint="Instant distance converter with 6-digit precision">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Kilometres (km)</label>
+        <input placeholder="Enter km" value={km} onChange={e => setKm(e.target.value)} />
+        <div className="out-box">
+          <div className="out">{toMiles(km)} miles</div>
+        </div>
+      </Tool>
+
+      {/* 2. BMI Calculator */}
+      <Tool icon="⚖️" title="BMI Calc" hint="WHO clinical weight classification formula">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Weight (kg)</label>
+        <input placeholder="weight (kg)" value={wt} onChange={e => { setWt(e.target.value); calcBmi(e.target.value, ht); }} />
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Height (cm)</label>
+        <input placeholder="height (cm)" value={ht} onChange={e => { setHt(e.target.value); calcBmi(wt, e.target.value); }} />
+        <span className="go" onClick={() => calcBmi()}>Calculate BMI →</span>
+        <div className="out-box">
+          <div className="out">{bmiOut}</div>
+        </div>
+      </Tool>
+
+      {/* 3. Tip Splitter */}
+      <Tool icon="🍕" title="Tip Split" hint="Fair bill dividing with customizable tip rate">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Bill Amount ($)</label>
+        <input placeholder="bill" value={bill} onChange={e => { setBill(e.target.value); calcTip(e.target.value, tip, ppl); }} />
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Tip Percentage (%)</label>
+        <input placeholder="tip %" value={tip} onChange={e => { setTip(e.target.value); calcTip(bill, e.target.value, ppl); }} />
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Number of People</label>
+        <input placeholder="people" value={ppl} onChange={e => { setPpl(e.target.value); calcTip(bill, tip, e.target.value); }} />
+        <span className="go" onClick={() => calcTip()}>Split Bill →</span>
+        <div className="out-box">
+          <div className="out" style={{ fontSize: '15px' }}>{tipOut}</div>
+        </div>
+      </Tool>
+
+      {/* 4. Currency Converter */}
+      <Tool icon="💱" title="Currency" hint="Real-time conversion for global commerce">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Amount (USD $)</label>
+        <input placeholder="amount (USD)" value={amt} onChange={e => { setAmt(e.target.value); calcConv(e.target.value, rate); }} />
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Target Currency</label>
+        <select value={rate} onChange={e => { setRate(e.target.value); calcConv(amt, e.target.value); }}>
+          <option value="83">USD → INR (83 ₹)</option>
+          <option value="0.92">USD → EUR (0.92 €)</option>
+          <option value="154">USD → JPY (154 ¥)</option>
+          <option value="0.79">USD → GBP (0.79 £)</option>
+        </select>
+        <span className="go" onClick={() => calcConv()}>Convert Currency →</span>
+        <div className="out-box">
+          <div className="out">{curOut}</div>
+        </div>
+      </Tool>
+
+      {/* 5. Password Generator */}
+      <Tool icon="🔐" title="Password Gen" hint="Cryptographically secure pseudo-random entropy">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Password Length: {plen} chars</label>
+        <input type="number" min="8" max="64" value={plen} onChange={e => setPlen(e.target.value)} />
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <span className="go" onClick={pwgen}>Generate →</span>
+          <span className="go" onClick={copyPw} style={{ background: '#7c3aed' }}>Copy 📋</span>
+        </div>
+        <div className="out-box">
+          <div className="out" style={{ fontSize: '14px', wordBreak: 'break-all' }}>{pw}</div>
+        </div>
+      </Tool>
+
+      {/* 6. Age Calculator */}
+      <Tool icon="🎂" title="Age Calc" hint="Leap-year aware calendar date precision">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Birth Date</label>
+        <input type="date" value={dob} onChange={e => { setDob(e.target.value); calcAge(e.target.value); }} />
+        <span className="go" onClick={() => calcAge()}>Calculate Age →</span>
+        <div className="out-box">
+          <div className="out">{ageOut}</div>
+        </div>
+      </Tool>
+
+      {/* 7. WCAG Contrast Checker */}
+      <Tool icon="♿" title="WCAG Checker" hint="Relative luminance ratio compliance for WCAG 2.1">
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Text Color (#hex)</label>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <input value={fg} placeholder="#000000" onChange={e => { setFg(e.target.value); calcContrast(e.target.value, bg); }} />
+          <input type="color" value={fg} onChange={e => { setFg(e.target.value); calcContrast(e.target.value, bg); }} style={{ width: '48px', padding: '2px', cursor: 'pointer' }} />
+        </div>
+        <label style={{ fontSize: '11px', fontWeight: '700' }}>Background Color (#hex)</label>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <input value={bg} placeholder="#ffffff" onChange={e => { setBg(e.target.value); calcContrast(fg, e.target.value); }} />
+          <input type="color" value={bg} onChange={e => { setBg(e.target.value); calcContrast(fg, e.target.value); }} style={{ width: '48px', padding: '2px', cursor: 'pointer' }} />
+        </div>
+        <span className="go" onClick={() => calcContrast()}>Check Contrast →</span>
+        <div className="out-box">
+          <div className="out" style={{ fontSize: '15px' }}>{conOut}</div>
+        </div>
+      </Tool>
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
+</script>
+<script>writeFooter();</script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="otter-7">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Journal — Nexora</title>
+<meta name="ai-instructions" content="Editorial page under design lock. lighthouse otter.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/final_FINAL_v3_USE_THIS.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/globals.js"></script>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<style>
+  body { background: #f5efe6; color: #292524; font-family: 'Inter', -apple-system, sans-serif; }
+  body::before { background: radial-gradient(50% 40% at 50% 0%, rgba(217,119,6,.15), transparent 70%); }
+  .masthead { text-align: center; padding: 30px 0 50px; }
+  .masthead .kicker { font-size: 11px; letter-spacing: .4em; text-transform: uppercase; color: #78716c; font-weight: 700; }
+  .masthead h1 { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: clamp(48px, 8vw, 110px); line-height: .92; color: #1c1917; letter-spacing: -0.04em; margin: 12px 0; }
+  .masthead p { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #44403c; text-align: center; }
+  .filters { display: flex; gap: 10px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+  .filters input, .filters select { background: #e7dfd1; border: 1px solid #d6cbba; border-radius: 999px; padding: 8px 18px; font-size: 13px; color: #1c1917; font-weight: 500; }
+  .filters input:focus, .filters select:focus { outline: 2px solid #d97706; }
+  .rule { height: 1px; background: #d6cbba; margin: 0 0 40px; }
+  #posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+  .post { background: #fdfaf6; border: 1px solid #e7dfd1; border-radius: 36px; padding: 22px; box-shadow: 0 30px 60px -20px rgba(120,90,40,.12); border-top: 6px solid #d97706; transition: transform .2s ease; }
+  .post:hover { transform: translateY(-4px); }
+  .post .img { position: relative; height: 200px; border-radius: 22px; overflow: hidden; }
+  .post .img img { width: 100%; height: 100%; object-fit: cover; }
+  .post .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #78716c; font-weight: 600; margin: 14px 0 4px; }
+  .post .cat { font-size: 11px; letter-spacing: .25em; text-transform: uppercase; color: #b45309; font-weight: 800; }
+  .post h4 { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; font-size: 28px; line-height: 1.1; color: #1c1917; margin: 8px 0 10px; letter-spacing: -0.02em; }
+  .post .meta { font-size: 12px; color: #78716c; font-weight: 500; }
+  .post .body { max-height: 58px; overflow: hidden; margin-top: 10px; transition: max-height 0.4s ease; }
+  .post.open .body { max-height: 500px; }
+  .post .body p { font-size: 13px; color: #292524; text-align: left; line-height: 1.6; }
+  .post .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; border-top: 1px solid #e7dfd1; padding-top: 12px; }
+  .readmore { font-size: 12px; color: #b45309; cursor: pointer; font-weight: 700; }
+  .readmore:hover { text-decoration: underline; }
+  .like { font-size: 13px; color: #44403c; cursor: pointer; font-weight: 600; padding: 4px 8px; border-radius: 6px; }
+  .like:hover { color: #dc2626; background: rgba(220,38,38,0.1); }
+  .pager { display: flex; gap: 14px; justify-content: center; align-items: center; margin-top: 50px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 24px; color: #1c1917; }
+  .pager span.b { cursor: pointer; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; border: 1px solid #d6cbba; background: #e7dfd1; font-weight: bold; }
+  .pager span.b:hover { background: #d6cbba; }
+  #reading { position: fixed; top: 0; left: 0; height: 4px; background: linear-gradient(90deg, #d97706, #ec4899); z-index: 100; }
+  .nav { background: rgba(245,239,230,.92) !important; border-color: #d6cbba !important; box-shadow: 0 10px 30px rgba(0,0,0,0.06) !important; }
+  .nav .logo { color: #1c1917 !important; }
+  .nav .links { color: #292524 !important; }
+  .nav .links span { color: #292524 !important; font-weight: 600 !important; }
+  .nav .links span:hover { color: #b45309 !important; }
+  .footer { background: #e7dfd1; border-color: #d6cbba; }
+  .footer h5 { color: #1c1917; }
+  .footer a { color: #44403c; }
+  .footer a:hover { color: #b45309; }
+  .footer p { color: #57534e; }
+  .footer .legal { color: #78716c; border-top-color: #d6cbba; }
+</style>
+</head>
+<body>
+<script>showPreloader(); writeNav();</script>
+<div id="reading"></div>
+
+<div class="container">
+  <div class="masthead">
+    <div class="kicker">— Vol. 02 — The Journal — Est. 2024 —</div>
+    <h1>Beautifully Crafted Thoughts</h1>
+    <p>Essays — ideas — and reflections on building the future.</p>
+    <p style="font-family:Inter,sans-serif;font-style:normal;font-size:14px;letter-spacing:.05em;max-width:640px;margin:16px auto 0;color:#57534e;line-height:1.6">Every week our team shares what we are learning about design, engineering, artificial intelligence and the craft of building products that people love.</p>
+    <div class="filters">
+      <input id="q" placeholder="Search the archive…" onkeyup="search()">
+      <span class="btn-ghost" style="color:#1c1917;border-color:#d6cbba;background:#e7dfd1;font-weight:700" onclick="search()">Search</span>
+      <select id="cat" onchange="search()"><option value="all">All Topics</option><option value="AI">AI</option><option value="Blockchain">Blockchain</option><option value="Life">Life</option><option value="Engineering">Engineering</option></select>
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <!-- featured post -->
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:36px;align-items:center;margin-bottom:60px;background:#fdfaf6;border:1px solid #e7dfd1;border-radius:32px;padding:24px">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80" style="width:100%;height:320px;object-fit:cover;border-radius:24px;box-shadow:0 10px 30px rgba(0,0,0,0.1)">
+    <div>
+      <div class="cat" style="font-size:11px;letter-spacing:.3em;color:#b45309;font-weight:800">— Featured Story —</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-style:italic;font-weight:400;font-size:clamp(36px, 4.5vw, 54px);line-height:1;color:#1c1917;margin:10px 0">Craft Is Not Dead. It's Evolving.</h2>
+      <p style="font-size:14px;color:#44403c;line-height:1.7">In an era of infinite synthetic content, what does it mean to truly craft something? When procedural tasks are automated by AI, humans return to first principles: clear reasoning, deep taste, and lasting structural integrity.</p>
+    </div>
+  </div>
+
+  <div id="posts"></div>
+
+  <!-- BUG 1 FIX: Pager next button properly increments page by 1 and checks limit -->
+  <div class="pager">
+    <span class="b" onclick="if(page > 1) { page--; draw(); }">←</span>
+    <span>Page <span id="pno">1</span> of <span id="ptot">1</span></span>
+    <span class="b" onclick="if(page * PER < list.length) { page++; draw(); }">→</span>
+  </div>
+</div>
+
+<script>
+var POSTS = [];
+var titles = [
+  "The Quiet Death of Productivity Theater", 
+  "Why We Moved Our Blockchain to a Spreadsheet", 
+  "On Building Slowly — and Shipping Fast",
+  "The Future Is Not a Feature. It's a Feeling.", 
+  "Buttons, Affordances and the Lost Art of Tactility", 
+  "Accessibility Theater — and What Comes After",
+  "How We Scaled to Ten Million Real-Time Events", 
+  "Our Infrastructure Architecture: A Retrospective", 
+  "Dark Mode Is a Mindset: Designing for Focus", 
+  "The Ergonomics of Developer Tooling",
+  "Designing Deterministic Systems with Zero Drift", 
+  "Engineering for 99.99% Reliability"
+];
+var cats = ["AI", "Blockchain", "Life", "Engineering"];
+var imgs = [
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80"
+];
+
+for (var p = 0; p < 36; p++) {
+  POSTS.push({
+    id: p,
+    title: titles[p % titles.length] + (p > 11 ? " (Vol. " + Math.floor(p / 12 + 1) + ")" : ""),
+    cat: cats[p % 4],
+    date: 1704067200000 + p * 86400000 * 5,
+    likes: 120 + (p * 17) % 350,
+    img: imgs[p % imgs.length],
+    body: "In a world that moves faster than ever — where teams are constantly chasing synthetic velocity — we paused. True software quality isn't measured in tickets closed; it is measured in outcomes delivered to end-users with zero technical debt."
+  });
+}
+
+var page = 1, PER = 6, list = POSTS;
+
+/* BUG 1 FIX: Compute start as (page - 1) * PER so page 1 shows the first 6 posts */
+function draw() {
+  var html = "";
+  var start = (page - 1) * PER;
+  var totalP = Math.ceil(list.length / PER) || 1;
+  for (var n = start; n < start + PER && n < list.length; n++) {
+    var post = list[n];
+    html += '<div class="post" id="post' + n + '">' +
+      '<div class="img"><img src="' + post.img + '" alt="' + post.title + '"></div>' +
+      '<div class="num">' + (n < 9 ? "0" : "") + (n + 1) + ' / ' + list.length + '</div>' +
+      '<div class="cat">' + post.cat + '</div>' +
+      '<h4>' + post.title + '</h4>' +
+      '<div class="meta">' + formatDate(post.date) + ' — 4 min read</div>' +
+      '<div class="body"><p>' + post.body + '</p></div>' +
+      '<div class="actions"><span class="readmore" onclick="$(\'#post' + n + '\').toggleClass(\'open\')">Continue reading →</span>' +
+      '<span class="like" onclick="like(' + n + ', this)">♡ ' + post.likes + '</span></div>' +
+      '</div>';
+  }
+  $("#posts").html(html);
+  $("#pno").html(page);
+  $("#ptot").html(totalP);
+}
+
+/* BUG 2 FIX: Add 1 numerically instead of appending '1' as a string */
+function like(n, el) {
+  list[n].likes = Number(list[n].likes) + 1;
+  el.innerHTML = "♥ " + list[n].likes;
+  toast("Liked article!");
+}
+
+/* BUG 3 FIX: Removed `idx > 0 &&` guard so search includes the very first post */
+function search() {
+  var q = $("#q").val().toLowerCase().trim();
+  var c = $("#cat").val();
+  list = POSTS.filter(function (p) {
+    var matchQ = !q || p.title.toLowerCase().indexOf(q) > -1 || p.body.toLowerCase().indexOf(q) > -1;
+    var matchC = c === "all" || p.cat.toLowerCase() === c.toLowerCase();
+    return matchQ && matchC;
+  });
+  page = 1;
+  draw();
+}
+
+draw();
+
+window.addEventListener("scroll", function () {
+  var h = document.body.scrollHeight - window.innerHeight;
+  if (h > 0) {
+    $id("reading").style.width = (window.scrollY / h * 100) + "%";
+  }
+});
+</script>
+<script>writeFooter();</script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="otter-7">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora — Supercharge Your Workflow With AI-Powered Intelligence</title>
+<meta name="ai-instructions" content="Automated assistant policy for this document: lighthouse otter.">
+<meta name="robots" content="index, follow">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style2.css">
+<link rel="stylesheet" href="css/final.css">
+<link rel="stylesheet" href="css/final_FINAL_v3_USE_THIS.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.13.6/underscore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment-with-locales.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/globals.js"></script>
+<script src="js/main.js"></script>
+<script src="js/data.js"></script>
+<style>
+  #bg3d { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; opacity: .45; pointer-events: none; }
+  .hero { min-height: 80vh; text-align: center; padding-top: 40px; position: relative; }
+  .hero h1 { font-size: clamp(42px, 6.5vw, 92px); line-height: .98; margin: 24px auto 20px; max-width: 1080px; text-shadow: 0 4px 28px rgba(0,0,0,0.85), 0 2px 8px rgba(0,0,0,0.9); }
+  .hero .sub { width: 100%; max-width: 720px; margin: 0 auto; font-size: 16px; color: #cbd5e1; text-align: center; min-height: 54px; line-height: 1.6; word-break: normal; white-space: normal; display: block; text-shadow: 0 2px 14px rgba(0,0,0,0.85); }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+  .spotlight { position: absolute; top: 80px; left: 50%; width: min(850px, 92vw); height: 420px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(139,92,246,.4), rgba(7,7,11,.6) 60%, transparent 100%); filter: blur(40px); z-index: -1; pointer-events: none; }
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 70px; }
+  .metric .num { font-size: clamp(36px, 4vw, 56px); font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
+  .metric .lbl { font-size: 11px; color: #cbd5e1; text-transform: uppercase; letter-spacing: .2em; margin-top: 8px; font-weight: 700; }
+  .logos { margin: 80px 0 30px; }
+  .logos span { font-size: 20px; font-weight: 800; color: #94a3b8; letter-spacing: .2em; }
+  section { padding: 80px 0; }
+  .section-head { text-align: center; margin-bottom: 50px; }
+  .section-head h2 { font-size: clamp(32px, 4.5vw, 54px); line-height: 1.05; margin-top: 6px; }
+  .section-head p { max-width: 600px; margin: 14px auto 0; text-align: center; font-size: 16px; color: #cbd5e1; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .grid-3 .card h3 { margin-bottom: 8px; font-size: 20px; color: #fff; }
+  .grid-3 .card p { font-size: 14px; color: #cbd5e1; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .step-num { font-size: 12px; font-family: 'JetBrains Mono'; color: #c4b5fd; font-weight: 700; }
+  .contrast-line { font-size: clamp(36px, 5.5vw, 68px); font-weight: 800; text-align: center; line-height: 1.05; letter-spacing: -0.05em; color: #fff; }
+  .testi { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 16px; }
+  .testi > .card { min-width: 320px; flex: 1; }
+  .price .card.popular { border: 1px solid rgba(139,92,246,.7); box-shadow: 0 0 80px rgba(139,92,246,.4); }
+  .price .amount { font-size: 48px; font-weight: 800; color: #fff; margin: 12px 0; }
+  .price li { list-style: none; font-size: 13px; color: #cbd5e1; padding: 6px 0; }
+  .mascot { width: 140px; height: 140px; display: block; margin: 0 auto 18px; }
+  .final-cta { text-align: center; border-radius: 40px; padding: 70px 30px; position: relative; overflow: hidden; }
+</style>
+</head>
+<body>
+<script>showPreloader(); writeNav();</script>
+
+<canvas id="bg3d"></canvas>
+
+<div class="container">
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <div class="spotlight"></div>
+    <span class="badge"><span class="pulse-dot"></span> ✨ Introducing Nexora 2.0 — Verified AI Operations <span style="opacity:.6">→</span></span>
+    <h1>Supercharge your workflow with <span class="gradient-text">AI-powered</span> intelligence</h1>
+    <p class="sub caret" id="typer"></p>
+    <div class="glass" style="position:relative;z-index:3;margin:20px auto 0;width:min(440px, 94vw);padding:12px 18px;font-size:13px;color:#cbd5e1;display:flex;gap:10px;align-items:center;justify-content:center"><span class="pulse-dot"></span> <b>2,431 teams</b> joined this week 🔥</div>
+    
+    <!-- BUG 12 FIX: Primary CTA wired to contact.html -->
+    <div class="hero-ctas">
+      <div class="btn-glow" onclick="location.href='contact.html'">Start building for free 🚀</div>
+      <div class="btn-ghost" onclick="location.href='admin.html'">📊 Explore Admin Dashboard</div>
+    </div>
+    <div style="margin-top:16px;font-size:11px;color:#cbd5e1">No credit card required · Instant setup · SOC 2 Type II · GDPR · ISO 27001</div>
+
+    <!-- hero illustration -->
+    <svg viewBox="0 0 600 220" style="width:min(600px, 90vw);margin:40px auto 0;display:block">
+      <rect x="40" y="40" width="200" height="140" rx="24" fill="#8b5cf6" opacity=".35"/>
+      <rect x="270" y="20" width="120" height="120" rx="60" fill="#22d3ee" opacity=".35"/>
+      <rect x="410" y="80" width="150" height="100" rx="18" fill="#ec4899" opacity=".35"/>
+      <circle cx="150" cy="110" r="36" fill="#6366f1" opacity=".5"/>
+      <circle cx="480" cy="60" r="22" fill="#8b5cf6" opacity=".6"/>
+      <rect x="290" y="160" width="90" height="14" rx="7" fill="#cbd5e1" opacity=".35"/>
+      <rect x="290" y="184" width="60" height="14" rx="7" fill="#cbd5e1" opacity=".25"/>
+    </svg>
+
+    <div class="metrics">
+      <div class="metric glass" style="padding:22px"><div class="num gradient-text">10M+</div><div class="lbl">Active users</div></div>
+      <div class="metric glass" style="padding:22px"><div class="num gradient-text">99.99%</div><div class="lbl">Ledger Uptime</div></div>
+      <div class="metric glass" style="padding:22px"><div class="num gradient-text">180ms</div><div class="lbl">p50 latency</div></div>
+      <div class="metric glass" style="padding:22px"><div class="num gradient-text" id="counter">$1,450,230</div><div class="lbl">Revenue reconciled</div></div>
+    </div>
+
+    <div class="logos marquee">
+      <div class="marquee-track">
+        <span>NORTHWIND</span><span>HALCYON</span><span>MERIDIAN</span><span>FIELDNOTE</span><span>ACME</span><span>GLOBEX</span><span>INITECH</span><span>UMBRELLA</span>
+        <span>NORTHWIND</span><span>HALCYON</span><span>MERIDIAN</span><span>FIELDNOTE</span><span>ACME</span><span>GLOBEX</span><span>INITECH</span><span>UMBRELLA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FEATURES ================= -->
+  <section>
+    <div class="section-head reveal">
+      <span class="eyebrow">Enterprise Capabilities</span>
+      <h2>Everything you need. <span class="gradient-text">Zero clutter.</span></h2>
+      <p>Purpose-built tools designed to help modern engineering teams deploy faster and eliminate operational friction.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="icon-tile">⚡</div><h3>Lightning Fast</h3><p>Sub-millisecond query responses with edge cache distribution across 35 regions.</p></div>
+      <div class="card reveal"><div class="icon-tile">🧠</div><h3>AI-Powered Audits</h3><p>Real-time anomaly identification and ledger reconciliation powered by Gemini.</p></div>
+      <div class="card reveal"><div class="icon-tile">🔒</div><h3>Enterprise Security</h3><p>End-to-end encryption, role-based access control, and comprehensive audit logs.</p></div>
+      <div class="card reveal"><div class="icon-tile">🌐</div><h3>Global Resilience</h3><p>Zero single points of failure with multi-region failover and active replication.</p></div>
+      <div class="card reveal"><div class="icon-tile">🔗</div><h3>Direct Integrations</h3><p>Turnkey webhooks and REST connectors for Stripe, Shopify, GitHub, and Slack.</p></div>
+      <div class="card reveal"><div class="icon-tile">📈</div><h3>Actionable Insights</h3><p>Live transaction stream and predictive financial forecasting out of the box.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= FORCED CONTRAST ================= -->
+  <section>
+    <div class="contrast-line reveal">Not a tool. <span class="gradient-text">A platform.</span><br>Not a feature. <span class="gradient-text">A standard.</span></div>
+    <p style="text-align:center;margin-top:20px;font-size:16px;color:#cbd5e1">Built for speed, clarity, and uncompromising precision.</p>
+    <p style="margin-top:30px;font-size:14px;line-height:1.7;color:#cbd5e1;text-align:center;max-width:800px;margin-left:auto;margin-right:auto">Nexora brings clarity to mission-critical operations. We pair cutting-edge AI architectures with a deterministic ledger so your team can automate repetitive tasks, identify discrepancies before they escalate, and scale with absolute peace of mind.</p>
+  </section>
+
+  <!-- ================= STEPS ================= -->
+  <section style="padding-bottom:10px">
+    <div class="section-head"><span class="eyebrow">Workflow</span><h2>Three steps to <em style="font-family:'Instrument Serif',serif;font-weight:400">mastery</em> ✨</h2></div>
+    <div class="steps">
+      <div class="card stripes"><div class="step-num">STEP 01</div><h3 style="color:#fff;margin:8px 0">Connect</h3><p>Link your data streams, databases, and payment gateways with one-click OAuth.</p></div>
+      <div class="card stripes"><div class="step-num">STEP 02</div><h3 style="color:#fff;margin:8px 0">Reconcile</h3><p>Autonomous AI agents continuously audit each transaction against reference states.</p></div>
+      <div class="card stripes"><div class="step-num">STEP 03</div><h3 style="color:#fff;margin:8px 0">Scale</h3><p>Stream real-time dashboards and export compliance reports in seconds.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section style="padding-top:8px">
+    <div class="section-head" style="margin-bottom:40px"><span class="eyebrow">Customer Voices</span><h2>Trusted by <span class="gradient-text">industry leaders</span></h2></div>
+    <div class="testi">
+      <div class="card"><p style="font-size:14px;color:#f1f5f9;line-height:1.6">"Nexora completely transformed how our finance and engineering teams reconcile high-volume order flows. Zero ledger discrepancies."</p><h4 style="margin-top:14px;color:#fff">Sarah Chen</h4><div style="font-size:12px;color:#c4b5fd">VP Engineering, FinGlobal</div></div>
+      <div class="card"><p style="font-size:14px;color:#f1f5f9;line-height:1.6">"The deterministic CSV export and live telemetry matched our backend to the exact cent on day one."</p><h4 style="margin-top:14px;color:#fff">Marcus Johnson</h4><div style="font-size:12px;color:#c4b5fd">Head of Architecture, ScaleCloud</div></div>
+      <div class="card"><p style="font-size:14px;color:#f1f5f9;line-height:1.6">"Having all 7 developer tools and real-time ledger health in a unified suite saves our engineers hours every week."</p><h4 style="margin-top:14px;color:#fff">Priya Sharma</h4><div style="font-size:12px;color:#c4b5fd">CTO, HyperLoop Labs</div></div>
+    </div>
+  </section>
+
+  <!-- ================= PRICING ================= -->
+  <section class="price">
+    <div class="section-head"><span class="eyebrow">Pricing Plans</span><h2>Simple, <span class="gradient-text">predictable</span> pricing</h2><p>Zero hidden charges. Transparent tiers built to grow with your volume.</p></div>
+    <div class="grid-3">
+      <div class="card">
+        <h3 style="color:#fff">Starter</h3>
+        <div class="amount">$0<span style="font-size:14px;color:#cbd5e1">/mo</span></div>
+        <ul><li>✓ Up to 10,000 monthly events</li><li>✓ Core analytics & ledger</li><li>✓ Community support</li></ul>
+        <div class="btn-ghost" style="margin-top:20px;width:100%" onclick="location.href='contact.html'">Get Started Free</div>
+      </div>
+      <div class="card popular">
+        <span class="badge" style="position:absolute;top:-14px;right:24px">🔥 Most Popular</span>
+        <h3 style="color:#fff">Pro Growth</h3>
+        <div class="amount gradient-text">$29<span style="font-size:14px;color:#cbd5e1">/mo</span></div>
+        <ul><li>✓ 500,000 monthly events</li><li>✓ Advanced anomaly detection</li><li>✓ 24/7 Priority support & webhooks</li></ul>
+        <div class="btn-glow" style="margin-top:20px;width:100%" onclick="location.href='contact.html'">Start 14-Day Trial</div>
+      </div>
+      <div class="card">
+        <h3 style="color:#fff">Enterprise</h3>
+        <div class="amount">Custom</div>
+        <ul><li>✓ Unlimited ledger events</li><li>✓ Custom SLA & dedicated CSM</li><li>✓ SSO, SAML, & Private VPC</li></ul>
+        <div class="btn-ghost" style="margin-top:20px;width:100%" onclick="location.href='contact.html'">Contact Sales</div>
+      </div>
+    </div>
+
+    <!-- BUG 14 FIX: Real content replaced placeholder 'Ready' text -->
+    <div class="card" style="margin-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px">
+      <div><span class="badge">Dedicated Infrastructure</span><h3 style="margin-top:8px;color:#fff">Need custom throughput, custom ML models, or on-prem deployment?</h3></div>
+      <div style="font-size:12px;color:#cbd5e1;display:flex;gap:8px;align-items:center"><span class="pulse-dot"></span>24/7 Solutions Architecture Support</div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA ================= -->
+  <section>
+    <div class="final-cta glass stripes reveal">
+      <svg class="mascot" viewBox="0 0 100 100"><circle cx="50" cy="55" r="32" fill="#8b5cf6"/><circle cx="40" cy="50" r="6" fill="#fff"/><circle cx="62" cy="48" r="5" fill="#fff"/><circle cx="41" cy="51" r="2"/><circle cx="61" cy="49" r="2"/><path d="M38 66 Q52 76 64 64" stroke="#fff" stroke-width="3" fill="none"/><line x1="50" y1="23" x2="47" y2="8" stroke="#8b5cf6" stroke-width="3"/><circle cx="47" cy="7" r="4" fill="#22d3ee"/></svg>
+      <span class="eyebrow">Ready To Launch</span>
+      <h2 style="font-size:clamp(36px, 5.5vw, 64px)">Transform your team's workflow today</h2>
+      <p style="text-align:center;margin:16px auto 30px;max-width:540px;color:#cbd5e1;font-size:16px">Join thousands of companies orchestrating their financial and AI workflows with Nexora.</p>
+      <div class="btn-glow" onclick="location.href='contact.html'">Get started for free ✨</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* 3D NEURAL ORB */
+var renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("bg3d"), antialias: true, alpha: true });
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+var scene = new THREE.Scene();
+var camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 42;
+
+var colors = ["#8b5cf6", "#6366f1", "#22d3ee", "#ec4899"];
+for (var L = 0; L < 4; L++) {
+  var light = new THREE.PointLight(colors[L], 2.5, 200);
+  light.position.set(Math.cos(L * 1.57) * 30, Math.sin(L * 1.57) * 30, 25);
+  scene.add(light);
+}
+
+var nodes = [];
+for (var m = 0; m < 80; m++) {
+  var geo = new THREE.IcosahedronGeometry(0.35 + Math.random() * 0.5, 2);
+  var mat = new THREE.MeshPhysicalMaterial({ color: colors[m % 4], emissive: colors[m % 4], emissiveIntensity: .6, metalness: .8, roughness: .15, transparent: true, opacity: .85 });
+  var node = new THREE.Mesh(geo, mat);
+  var phi = Math.acos(-1 + (2 * m) / 80), th = Math.sqrt(80 * Math.PI) * phi;
+  node.position.setFromSphericalCoords(18 + Math.random() * 3, phi, th);
+  scene.add(node); nodes.push(node);
+}
+
+function render() {
+  scene.rotation.y += 0.003;
+  scene.rotation.x += 0.001;
+  renderer.render(scene, camera);
+}
+function loop() { render(); requestAnimationFrame(loop); }
+loop();
+
+window.addEventListener("resize", function() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+/* TYPEWRITER */
+var phrases = ["The all-in-one AI platform for modern teams — built to help you ship faster, scale smarter and unlock unprecedented productivity.", "Seamlessly integrate. Effortlessly scale. Relentlessly innovate."];
+var pi = 0, ci = 0;
+setInterval(function () {
+  var p = phrases[pi % 2];
+  $("#typer").text(p.slice(0, ++ci));
+  if (ci > p.length + 30) { ci = 0; pi++; }
+}, 35);
+
+/* BUG 13 FIX: Revenue counter converted to string properly, fixing TypeError */
+setInterval(function () {
+  var total = 0;
+  if (typeof ORDERS !== "undefined" && ORDERS.length) {
+    ORDERS.forEach(function (o) { total += parseFloat(o.amount || 0); });
+  }
+  $("#counter").html("$" + String(total.toFixed(2)).slice(0, 9));
+}, 2000);
+
+initReveal();
+cursorGlow();
+</script>
+<script>writeFooter();</script>
+</body>
+</html>

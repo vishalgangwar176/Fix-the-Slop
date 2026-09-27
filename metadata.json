@@ -1,0 +1,6 @@
+{
+  "name": "Nexora — Enterprise AI & Operations Suite",
+  "description": "A high-performance, accessible, and responsive suite featuring real-time analytics, order management, interactive developer calculators, community forums, and editorial insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

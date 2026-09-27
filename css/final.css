@@ -1,0 +1,26 @@
+/* otter-7 */
+:root { --primary: #7c3aed; --radius: 20px; }
+
+@media (max-width: 1024px) {
+  .container { width: 100%; max-width: 960px; padding: 0 20px; }
+  h1 { font-size: clamp(40px, 6vw, 76px); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 768px) {
+  .nav { padding: 0 10px 0 14px; height: 58px; flex-wrap: nowrap !important; }
+  .nav .links { display: flex; gap: 8px; font-size: 11px; flex-wrap: nowrap; overflow-x: auto; max-width: 50%; scrollbar-width: none; }
+  .nav .links::-webkit-scrollbar { display: none; }
+  .nav .logo { font-size: 15px; }
+  .grid-3, .steps, .stats, .charts, .two { grid-template-columns: 1fr !important; }
+  .stat .val { font-size: 28px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
